@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dulce Promesa · Un bocado de fe y esperanza</title>
+<meta name="description" content="Dulce Promesa: muffins artesanales de G. E. Hudson, hechos con fe, amor y esperanza.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#f6cfdd">
+<link rel="stylesheet" href="style.css">
+<noscript><style>.loader{display:none}[data-anim],.arch{opacity:1!important;transform:none!important;filter:none!important}.section-head[data-anim]>*{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body class="loading">
+<!-- ================= PANTALLA DE BIENVENIDA ================= -->
+<div class="loader" id="loader" role="status" aria-label="Cargando Dulce Promesa">
+  <div class="loader-card">
+    <img class="loader-logo" src="./img/logo-ramas.jpg" alt="" onerror="this.style.display='none'">
+    <p class="loader-name">Dulce Promesa</p>
+    <span class="loader-heart" aria-hidden="true">♥</span>
+    <div class="loader-line" aria-hidden="true"><i></i></div>
+  </div>
+</div>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ================= NAVEGACIÓN ================= -->
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#inicio" class="logo"><img src="./img/logo-ramas.jpg" alt="Dulce Promesa" class="logo-img"></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#inicio">Inicio</a>
+      <a href="#historia">Historia</a>
+      <a href="#carta">La carta</a>
+      <a href="#taller">Taller</a>
+      <a href="#mercado">Mercado</a>
+      <a href="#cuentas">Cuentas</a>
+      <a href="#marca">Marca</a>
+      <a href="#redes">Redes</a>
+      <a href="#plan">Plan</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#contacto" class="btn btn-pill btn-nav">Hacer pedido</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ================= INICIO ================= -->
+<section id="inicio" class="home">
+  <!-- Detalles decorativos flotantes (pocos y suaves) -->
+  <div class="decor" aria-hidden="true">
+    <span style="--x:5%;--y:20%;--s:1.5rem">♥</span>
+    <span style="--x:91%;--y:13%;--s:1.1rem;--c:var(--lila-fuerte);--a:1.5s;--t:6s">✦</span>
+    <span style="--x:12%;--y:50%;--s:1.3rem;--c:var(--lila-fuerte);--a:1.8s;--t:9s">✿</span>
+    <span style="--x:87%;--y:42%;--s:1.6rem;--a:1.4s;--t:8s">♥</span>
+    <span style="--x:3%;--y:74%;--s:1rem;--c:var(--menta-fuerte);--a:2s;--t:7s">✦</span>
+    <span style="--x:94%;--y:70%;--s:1.4rem;--c:var(--rosa-empolvado);--a:1.7s;--t:10s">✿</span>
+    <span style="--x:22%;--y:10%;--s:.9rem;--c:var(--rosa-empolvado);--a:2.2s;--t:7s">✦</span>
+    <span style="--x:78%;--y:84%;--s:1.1rem;--a:2.4s;--t:9s">♥</span>
+  </div>
+  <div class="home-top">
+    <span class="chip" data-anim="fade-up">✦ Muffins artesanales · G. E. Hudson, Buenos Aires</span>
+    <h1 data-anim="title" data-delay="1">Un bocado <em>de fe</em><br>y esperanza</h1>
+    <p class="home-sub" data-anim="fade-up" data-delay="2">Muffins horneados cada día y una tarjetita con un mensaje escrito para vos. Porque lo dulce también puede inspirar.</p>
+    <div class="home-actions" data-anim="fade-up" data-delay="3">
+      <a href="#historia" class="btn btn-primary btn-shine">Conocé nuestro emprendimiento</a>
+      <button class="btn btn-ghost" id="openPromise" type="button">💌 Recibí tu versículo</button>
+    </div>
+    <div class="promise verse" id="promise" hidden aria-live="polite">
+      <span class="verse-spark vs1" aria-hidden="true">✦</span><span class="verse-spark vs2" aria-hidden="true">✦</span><span class="verse-spark vs3" aria-hidden="true">♥</span>
+      <div class="verse-body">
+        <p class="mini-title">Un versículo para tu corazón</p>
+        <blockquote class="verse-text" id="promiseText"></blockquote>
+        <p class="verse-ref" id="promiseRef"></p>
+        <p class="verse-ver">Reina-Valera 1909</p>
+        <button class="link-btn" id="nextPromise" type="button">Quiero otro versículo ↻</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="arches">
+    <figure class="arch a1 ph"><img src="./img/Muffinsvariados.png" alt="Muffin Promesa Triple"><span class="ph-label">muffin-triple.jpg</span></figure>
+    <figure class="arch a2 ph"><img src="./img/muffin.jpeg" alt="Muffins artesanales de Dulce Promesa"><span class="ph-label">muffin-hero.jpg</span></figure>
+    <figure class="arch a3 ph"><img src="./img/caja.png" alt="Caja de muffins con mensaje"><span class="ph-label">caja-6.jpg</span></figure>
+    <svg class="spin-badge" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text><textPath href="#circ">MUFFINS ARTESANALES • HECHOS CON FE • </textPath></text><text x="60" y="68" text-anchor="middle" class="heart">♥</text></svg>
+    <span class="sticker s1">Horneado el mismo día</span>
+    <span class="sticker s2">Mensaje de fe en cada caja</span>
+    <span class="sticker s3">Nuevo: Promesa Triple</span>
+  </div>
+
+  <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Fe</span><span>Amor</span><span>Calidad</span><span>Esperanza</span><span>Frescura</span><span>Cercanía</span><span>Fe</span><span>Amor</span><span>Calidad</span><span>Esperanza</span><span>Frescura</span><span>Cercanía</span></div></div>
+</section>
+
+<div class="facts-band">
+  <div class="fact" data-anim="fade-up"><b data-count="20">0</b><span>propuestas en la carta</span></div>
+  <div class="fact" data-anim="fade-up" data-delay="1"><b data-count="6">0</b><span>días de atención, de lunes a sábado</span></div>
+  <div class="fact" data-anim="fade-up" data-delay="2"><b data-count="3">0</b><span>vías de pedido: WhatsApp, Instagram y web</span></div>
+  <div class="fact" data-anim="fade-up" data-delay="3"><b>9 a 18</b><span>horario de atención. Producción diaria</span></div>
+</div>
+
+<!-- ================= QUIZ ================= -->
+<section id="quiz" class="section quiz-section">
+  <div class="section-head" data-anim="fade-up">
+    <p class="section-kicker">Un juego rápido</p>
+    <h2>¿Qué muffin va con vos hoy?</h2>
+  </div>
+  <div class="quiz card" data-anim="fade-up">
+    <div><p class="mini-title">1 · ¿Para qué momento?</p><div class="chips" id="quizMoment"></div></div>
+    <div><p class="mini-title">2 · ¿Qué antojo tenés?</p><div class="chips" id="quizMood"></div></div>
+    <div class="quiz-result" id="quizResult" aria-live="polite"><p class="muted">Elegí una opción en cada pregunta y te recomendamos uno.</p></div>
+  </div>
+</section>
+
+<!-- ================= HISTORIA ================= -->
+<section id="historia" class="section">
+  <div class="section-head" data-anim="fade-up">
+    <p class="section-kicker">Paso 01 · La idea</p>
+    <h2>Una receta que empezó con un propósito</h2>
+  </div>
+  <div class="about">
+    <div class="about-visual ph" data-anim="zoom"><img src="./img/sobre-nosotros.jpg" alt="Preparación de muffins en Dulce Promesa"><span class="ph-label">sobre-nosotros.jpg</span><div class="about-badge">Desde un proyecto escolar, pensado como negocio real</div></div>
+    <div class="about-text" data-anim="fade-up">
+      <p>Todo comenzó con una pregunta sencilla: ¿cómo hacer que un producto rico también deje algo en el corazón? Elegimos el muffin porque es práctico, tierno y acompaña cualquier momento del día, del desayuno a la merienda.</p>
+      <p>El nombre llegó después: <i>Dulce Promesa</i> junta la dulzura de lo que horneamos con la promesa y el amor de Dios, que queremos compartir de manera cálida y cercana.</p>
+      <p>Hoy trabajamos para crecer de a poco, mejorar cada receta y aprender de cada pedido, siempre con una presentación cuidada y una comunicación cercana.</p>
+      <p class="mini-title">Misión</p>
+      <p>Ofrecer muffins artesanales de excelente calidad, elaborados con dedicación, que transmitan fe, amor y esperanza en cada bocado.</p>
+    </div>
+  </div>
+
+  <!-- Video real de Nuestra historia -->
+  <div class="story" id="nuestra-historia-video">
+    <div class="story-head" data-anim="fade-up">
+      <p class="mini-title">Nuestra historia en video</p>
+      <h3>Mirá cómo nació Dulce Promesa</h3>
+    </div>
+    <div class="video-frame" id="videoFrame" data-anim="zoom">
+      <video id="storyVideo" preload="metadata" playsinline poster="media/nuestra-historia-miniatura.png">
+        <source src="media/nuestra-historia.mp4" type="video/mp4">
+        Tu navegador no puede reproducir este video.
+      </video>
+      <button class="video-cover ph" id="videoPlay" type="button" aria-label="Reproducir el video de nuestra historia">
+        <img src="media/nuestra-historia-miniatura.png" alt="Miniatura del video de la historia de Dulce Promesa">
+        <span class="ph-label">nuestra-historia-miniatura.png</span>
+        <span class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24" width="34" height="34"><path d="M8 5.2v13.6a1 1 0 0 0 1.5.86l11-6.8a1 1 0 0 0 0-1.72l-11-6.8A1 1 0 0 0 8 5.2z" fill="currentColor"/></svg></span>
+      </button>
+      <p class="video-msg" id="videoMsg" hidden role="status">No se encontró el video. Copialo en <b>media/nuestra-historia.mp4</b>.</p>
+    </div>
+  </div>
+
+  <div class="values">
+    <article class="card" data-anim="fade-up"><h3>Fe</h3><p>Lo que queremos transmitir. Lo que el cliente percibe: confianza y esperanza.</p></article>
+    <article class="card" data-anim="fade-up" data-delay="1"><h3>Amor</h3><p>Lo que queremos transmitir. Lo que el cliente percibe: cariño y cercanía.</p></article>
+    <article class="card" data-anim="fade-up" data-delay="2"><h3>Calidad</h3><p>Lo que queremos transmitir. Lo que el cliente percibe: un producto fresco y artesanal.</p></article>
+  </div>
+
+  <div class="two-col">
+    <div class="card" data-anim="fade-up">
+      <p class="mini-title">Hacia dónde vamos</p>
+      <div class="steps" id="vision"></div>
+      <p class="vision-text" id="visionText" aria-live="polite"></p>
+    </div>
+    <div class="card" data-anim="fade-up" data-delay="1">
+      <p class="mini-title">Metas del primer año</p>
+      <div class="goals">
+        <div><b data-count="150">0</b><span>ventas mensuales de muffins hacia diciembre de 2026</span></div>
+        <div><b data-count="800">0</b><span>seguidores en Instagram en los primeros 6 meses</span></div>
+        <div><b data-count="500">0</b><span>seguidores en TikTok en los primeros 6 meses</span></div>
+        <div><b data-count="4">0</b><span>sabores nuevos antes de marzo de 2027</span></div>
+      </div>
+    </div>
+  </div>
+
+  <blockquote class="pitch" data-anim="fade-up">
+    <p class="mini-title">Si tuviéramos treinta segundos</p>
+    “Somos Dulce Promesa, muffins artesanales de G. E. Hudson. Horneamos todos los días, cuidamos la presentación y en cada caja dejamos un mensaje positivo inspirado en la Palabra de Dios. No vendemos solo comida: ofrecemos algo rico que además te acompaña.”
+  </blockquote>
+</section>
+
+<!-- ================= CARTA ================= -->
+<section id="carta" class="section alt">
+  <div class="section-head" data-anim="fade-up">
+    <p class="section-kicker">Paso 02 · Los ingredientes</p>
+    <h2>La carta de Dulce Promesa</h2>
+    <p class="section-desc">Veinte propuestas para desayunos, meriendas, regalos y celebraciones.</p>
+  </div>
+
+  <div class="carousel" data-anim="fade-up">
+    <div class="carousel-track" id="carouselTrack"></div>
+    <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anterior"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Siguiente"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+
+  <article class="triple" data-anim="zoom">
+    <div class="triple-img ph"><img src="./img/muffin-triple.jpg" alt="Muffin Promesa Triple"><span class="ph-label">muffin-triple.jpg</span></div>
+    <div class="triple-body">
+      <span class="badge">Creación propia</span>
+      <h3>Muffin Promesa Triple</h3>
+      <p>Vainilla esponjosa, corazón de dulce de leche, cobertura de chocolate y un toque de limón en el frosting. Llega envuelto en papel kraft, con el sticker de la marca y una tarjetita con un versículo o mensaje de esperanza.</p>
+      <ul class="facts"><li>Individual o en caja de 4 o 6</li><li>Marrón chocolate, blanco vainilla y un toque amarillo limón</li><li>Precio sugerido: $2.800 a $3.200 la unidad, ajustable según costos</li></ul>
+      <button class="btn btn-order btn-primary" data-nombre="Muffin Promesa Triple">Pedir el Triple</button>
+    </div>
+  </article>
+
+  <div class="tools">
+    <input id="search" type="search" placeholder="Buscar un sabor o producto…" aria-label="Buscar">
+    <div class="chips" id="filters"></div>
+  </div>
+  <div class="muffins-grid" id="catalog"></div>
+  <p class="empty" id="noprod" hidden>No encontramos productos con esa búsqueda.</p>
+  <p class="note">Los productos con una estrella son los diez elegidos para el lanzamiento.</p>
+</section>
+
+<!-- ================= TALLER ================= -->
+<section id="taller" class="section">
+  <div class="section-head" data-anim="fade-up">
+    <p class="section-kicker">Paso 03 · La preparación</p>
+    <h2>Cómo se organiza el taller</h2>
+    <p class="section-desc">Dos responsables, una rutina clara y tiempo dedicado a cada tarea.</p>
+  </div>
+  <div class="tasks" id="tasks"></div>
+
+  <div class="two-col">
+    <div class="card" data-anim="fade-up">
+      <p class="mini-title">Qué necesita cubrir el producto</p>
+      <ul class="plain"><li>Un dulce fresco y de calidad para el desayuno, la merienda o el antojo.</li><li>Un regalo especial que comparta un mensaje positivo.</li><li>Una opción artesanal, fácil de pedir y con entrega coordinada.</li></ul>
+    </div>
+    <div class="card" data-anim="fade-up" data-delay="1">
+      <p class="mini-title">Lo que vamos a aprender y reforzar</p>
+      <div class="chips static" id="skills"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MERCADO ================= -->
+<section id="mercado" class="section alt">
+  <div class="section-head" data-anim="fade-up">
+    <p class="section-kicker">Paso 04 · La degustación</p>
+    <h2>Escuchamos a nuestros futuros clientes</h2>
+    <p class="section-desc">Encuesta anónima y con fines educativos a 15 personas: cinco de 18 a 25 años, cinco de 26 a 35 y cinco de 36 a 50.</p>
+  </div>
+
+  <div class="survey card" data-anim="fade-up">
+    <div class="chips" id="qChips"></div>
+    <div class="chart-box"><canvas id="qChart"></canvas><p class="empty" id="qEmpty" hidden>Todavía no hay resultados cargados para esta pregunta. Ingresalos en el formulario de abajo.</p></div>
+    <details class="editor">
+      <summary>Cargar o corregir resultados reales</summary>
+      <div class="inputs" id="qInputs"></div>
+      <div class="btnrow"><button class="btn btn-primary btn-sm" id="qSave">Actualizar gráfico</button><button class="btn btn-ghost btn-sm" id="qClear">Vaciar pregunta</button><button class="btn btn-ghost btn-sm" id="qReset">Restaurar datos iniciales</button></div>
+      <p class="note" id="qMsg" role="status"></p>
+    </details>
+  </div>
+  <p class="note center">Los valores iniciales provienen del gráfico del plan de negocios y son orientativos; conviene revisarlos con los resultados reales.</p>
+
+  <div class="two-col">
+    <div class="card chart-card" data-anim="fade-up"><canvas id="cmpChart"></canvas></div>
+    <div class="card" data-anim="fade-up" data-delay="1">
+      <p class="mini-title">Qué nos dicen los datos</p>
+      <ul class="plain"><li>Hay interés claro por los productos dulces y por recibir promociones.</li><li>Los alfajores y conitos fueron lo más elegido y el sabor lo más valorado al comprar.</li><li>La mayoría compraría una vez por semana y gastaría entre $3.000 y $6.000.</li><li>WhatsApp fue el medio favorito: lo usaremos para pedidos y consultas.</li></ul>
+    </div>
+  </div>
+
+  <!-- ===== COMPETENCIA, PROVEEDORES Y GESTIÓN COMERCIAL ===== -->
+  <h3 class="sub" data-anim="fade-up">Competencia y Proveedores</h3>
+
+  
+<!-- PLANILLAS DE ANÁLISIS DE PROVEEDORES -->
+<section class="proveedores-section">
+  <p class="mini-title center sp-top">
+    Nuestros proveedores
+  </p>
+
+  <h2 class="center">Análisis de proveedores</h2>
+
+  <p class="section-desc center">
+    Seleccionamos proveedores de la zona de Berazategui
+    para abastecer nuestro emprendimiento Dulce Promesa.
+  </p>
+
+  <div class="two-col">
+
+    <!-- PROVEEDOR 1 -->
+    <div class="card planilla" data-anim="fade-up">
+
+      <h3>Planilla 1 · Insumos de pastelería</h3>
+
+      <div class="tablewrap">
+        <table>
+          <tbody>
+            <tr>
+              <th>Empresa</th>
+              <td>Espacio Pastelero</td>
+            </tr>
+            <tr>
+              <th>Ubicación</th>
+              <td>Av. 14 N.º 2761, Berazategui Oeste</td>
+            </tr>
+            <tr>
+              <th>Actividad</th>
+              <td>Venta de insumos para pastelería y repostería</td>
+            </tr>
+            <tr>
+              <th>Productos principales</th>
+              <td>Materias primas, chocolate, crema e insumos de repostería</td>
+            </tr>
+            <tr>
+              <th>Productos sustitutos</th>
+              <td>Insumos equivalentes de otros comercios especializados</td>
+            </tr>
+            <tr>
+              <th>Tiempo de funcionamiento</th>
+              <td>No informado públicamente</td>
+            </tr>
+            <tr>
+              <th>Porcentaje de compra</th>
+              <td>A definir según consumo y cotizaciones</td>
+            </tr>
+            <tr>
+              <th>Contacto</th>
+              <td>11 6011-1378</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="escala">
+        <p class="mini-title">Evaluación objetiva</p>
+        <div class="chips static">
+          <span><b>5</b> Óptimo</span>
+          <span><b>4</b> Muy bueno</span>
+          <span><b>3</b> Bueno</span>
+          <span><b>2</b> Indiferente</span>
+          <span><b>1</b> Malo</span>
+          <span><b>0</b> Pésimo</span>
+        </div>
+      </div>
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Ítems a analizar</th>
+              <th>Evaluación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Precios</td><td>Pendiente</td></tr>
+            <tr><td>Plazo de entrega</td><td>Pendiente</td></tr>
+            <tr><td>Calidad de los productos</td><td>Pendiente</td></tr>
+            <tr><td>Stock</td><td>Pendiente</td></tr>
+            <tr><td>Variedad de productos</td><td>Pendiente</td></tr>
+            <tr><td>Calidad de atención</td><td>Pendiente</td></tr>
+            <tr><td>Velocidad de atención</td><td>Pendiente</td></tr>
+            <tr><td>Flexibilidad</td><td>Pendiente</td></tr>
+            <tr><td>Reconocimiento en el mercado</td><td>Pendiente</td></tr>
+            <tr><td>Relación precio-volumen</td><td>Pendiente</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tablewrap obs">
+        <table>
+          <caption>Información del proveedor</caption>
+          <tbody>
+            <tr>
+              <th>Rubro</th>
+              <td>Insumos de pastelería y repostería</td>
+            </tr>
+            <tr>
+              <th>Modalidad de compra</th>
+              <td>Consultar condiciones de venta y disponibilidad</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- PROVEEDOR 2 -->
+    <div class="card planilla" data-anim="fade-up" data-delay="1">
+
+      <h3>Planilla 2 · Envases y packaging</h3>
+
+      <div class="tablewrap">
+        <table>
+          <tbody>
+            <tr>
+              <th>Empresa</th>
+              <td>Punto Bolsa Argentina</td>
+            </tr>
+            <tr>
+              <th>Ubicación</th>
+              <td>Av. 14 N.º 2479, Berazategui</td>
+            </tr>
+            <tr>
+              <th>Actividad</th>
+              <td>Venta de bolsas, envases y artículos de packaging</td>
+            </tr>
+            <tr>
+              <th>Productos principales</th>
+              <td>Bolsas kraft, cajas de cartón para alimentos y bandejas</td>
+            </tr>
+            <tr>
+              <th>Productos sustitutos</th>
+              <td>Cajas de cartón, bolsas y bandejas de otros proveedores</td>
+            </tr>
+            <tr>
+              <th>Tiempo de funcionamiento</th>
+              <td>No informado públicamente</td>
+            </tr>
+            <tr>
+              <th>Porcentaje de compra</th>
+              <td>A definir según necesidades del emprendimiento</td>
+            </tr>
+            <tr>
+              <th>Contacto</th>
+              <td>11 5099-4979</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="escala">
+        <p class="mini-title">Evaluación objetiva</p>
+        <div class="chips static">
+          <span><b>5</b> Óptimo</span>
+          <span><b>4</b> Muy bueno</span>
+          <span><b>3</b> Bueno</span>
+          <span><b>2</b> Indiferente</span>
+          <span><b>1</b> Malo</span>
+          <span><b>0</b> Pésimo</span>
+        </div>
+      </div>
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Ítems a analizar</th>
+              <th>Evaluación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Precios</td><td>Pendiente</td></tr>
+            <tr><td>Plazo de entrega</td><td>Pendiente</td></tr>
+            <tr><td>Calidad de los productos</td><td>Pendiente</td></tr>
+            <tr><td>Stock</td><td>Pendiente</td></tr>
+            <tr><td>Variedad de productos</td><td>Pendiente</td></tr>
+            <tr><td>Calidad de atención</td><td>Pendiente</td></tr>
+            <tr><td>Velocidad de atención</td><td>Pendiente</td></tr>
+            <tr><td>Flexibilidad</td><td>Pendiente</td></tr>
+            <tr><td>Reconocimiento en el mercado</td><td>Pendiente</td></tr>
+            <tr><td>Relación precio-volumen</td><td>Pendiente</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tablewrap obs">
+        <table>
+          <caption>Información del proveedor</caption>
+          <tbody>
+            <tr>
+              <th>Rubro</th>
+              <td>Packaging y artículos para comercios gastronómicos</td>
+            </tr>
+            <tr>
+              <th>Modalidad de compra</th>
+              <td>Consultar precios, cantidades y disponibilidad</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ANÁLISIS DE LA COMPETENCIA -->
+<section class="competencia-section">
+
+  <p class="mini-title center sp-top" data-anim="fade-up">
+    2 planillas para el análisis de nuestra competencia
+  </p>
+
+  <h2 class="center">Conocemos a nuestros competidores</h2>
+
+  <p class="section-desc center">
+    Analizamos otros emprendimientos y comercios de pastelería
+    de Berazategui para conocer sus propuestas y diferenciarnos.
+  </p>
+
+  <div class="two-col">
+
+    <!-- COMPETIDOR 1 -->
+    <div class="card planilla" data-anim="fade-up">
+
+      <h3>Planilla 1 · Big Apple Bakery & Deli</h3>
+
+      <div class="tablewrap">
+        <table>
+          <caption>Datos del competidor</caption>
+          <tbody>
+            <tr>
+              <th>Nombre</th>
+              <td>Big Apple Bakery & Deli</td>
+            </tr>
+            <tr>
+              <th>Ubicación</th>
+              <td>Calle 22 N.º 4261, Berazategui</td>
+            </tr>
+            <tr>
+              <th>Actividad</th>
+              <td>Pastelería, panadería y venta de productos dulces</td>
+            </tr>
+            <tr>
+              <th>Producto principal</th>
+              <td>Muffin doble chocolate, cheesecakes y pastelería</td>
+            </tr>
+            <tr>
+              <th>Productos sustitutos</th>
+              <td>Tortas, tartas y otros productos de pastelería</td>
+            </tr>
+            <tr>
+              <th>Tiempo de funcionamiento</th>
+              <td>No informado públicamente</td>
+            </tr>
+            <tr>
+              <th>Canal de venta</th>
+              <td>Local y tienda online</td>
+            </tr>
+            <tr>
+              <th>Modalidad de entrega</th>
+              <td>Delivery y retiro en el local</td>
+            </tr>
+            <tr>
+              <th>Precio publicado</th>
+              <td>Muffin doble chocolate: $3.900 (precio consultado en catálogo online; puede variar)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="escala">
+        <p class="mini-title">Escala de evaluación</p>
+        <div class="chips static">
+          <span><b>5</b> Óptimo</span>
+          <span><b>4</b> Muy bueno</span>
+          <span><b>3</b> Bueno</span>
+          <span><b>2</b> Indiferente</span>
+          <span><b>1</b> Malo</span>
+          <span><b>0</b> Pésimo</span>
+        </div>
+      </div>
+
+      <div class="tablewrap">
+        <table>
+          <caption>Evaluación objetiva</caption>
+          <thead>
+            <tr>
+              <th>Ítems a analizar</th>
+              <th>Nota</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Precios</td><td>Pendiente</td></tr>
+            <tr><td>Calidad de los productos</td><td>Pendiente</td></tr>
+            <tr><td>Variedad de sabores</td><td>Pendiente</td></tr>
+            <tr><td>Presentación de los productos</td><td>Pendiente</td></tr>
+            <tr><td>Calidad de la atención</td><td>Pendiente</td></tr>
+            <tr><td>Rapidez de entrega</td><td>Pendiente</td></tr>
+            <tr><td>Presencia en internet</td><td>Pendiente</td></tr>
+            <tr><td>Promociones y descuentos</td><td>Pendiente</td></tr>
+            <tr><td>Relación precio-calidad</td><td>Pendiente</td></tr>
+            <tr><td>Diferenciación de la marca</td><td>Pendiente</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tablewrap obs">
+        <table>
+          <caption>Lo que relevamos</caption>
+          <tbody>
+            <tr>
+              <th>Fortaleza observada</th>
+              <td>Ofrece muffins y variedad de productos de pastelería.</td>
+            </tr>
+            <tr>
+              <th>Canal digital</th>
+              <td>Cuenta con catálogo online para consultar productos y realizar pedidos.</td>
+            </tr>
+            <tr>
+              <th>Competencia con Dulce Promesa</th>
+              <td>Compite en la venta de muffins y productos dulces.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- COMPETIDOR 2 -->
+    <div class="card planilla" data-anim="fade-up" data-delay="1">
+
+      <h3>Planilla 2 · Baking Magic</h3>
+
+      <div class="tablewrap">
+        <table>
+          <caption>Datos del competidor</caption>
+          <tbody>
+            <tr>
+              <th>Nombre</th>
+              <td>Baking Magic Pastelería & Cafetería</td>
+            </tr>
+            <tr>
+              <th>Ubicación</th>
+              <td>Calle 147 N.º 1289, Berazategui</td>
+            </tr>
+            <tr>
+              <th>Actividad</th>
+              <td>Pastelería artesanal y cafetería</td>
+            </tr>
+            <tr>
+              <th>Producto principal</th>
+              <td>Muffins con glaseado y variedades del día</td>
+            </tr>
+            <tr>
+              <th>Productos sustitutos</th>
+              <td>Pepas integrales, scones y otros productos de pastelería</td>
+            </tr>
+            <tr>
+              <th>Tiempo de funcionamiento</th>
+              <td>No informado públicamente</td>
+            </tr>
+            <tr>
+              <th>Canal de venta</th>
+              <td>Atención en el local y plataforma de delivery</td>
+            </tr>
+            <tr>
+              <th>Modalidad de entrega</th>
+              <td>Consultar opciones de retiro y envío</td>
+            </tr>
+            <tr>
+              <th>Calificación publicada</th>
+              <td>5,0/5 (8 opiniones en el registro consultado)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="escala">
+        <p class="mini-title">Escala de evaluación</p>
+        <div class="chips static">
+          <span><b>5</b> Óptimo</span>
+          <span><b>4</b> Muy bueno</span>
+          <span><b>3</b> Bueno</span>
+          <span><b>2</b> Indiferente</span>
+          <span><b>1</b> Malo</span>
+          <span><b>0</b> Pésimo</span>
+        </div>
+      </div>
+
+      <div class="tablewrap">
+        <table>
+          <caption>Evaluación objetiva</caption>
+          <thead>
+            <tr>
+              <th>Ítems a analizar</th>
+              <th>Nota</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Precios</td><td>Pendiente</td></tr>
+            <tr><td>Calidad de los productos</td><td>Pendiente</td></tr>
+            <tr><td>Variedad de sabores</td><td>Pendiente</td></tr>
+            <tr><td>Presentación de los productos</td><td>Pendiente</td></tr>
+            <tr><td>Calidad de la atención</td><td>Pendiente</td></tr>
+            <tr><td>Rapidez de entrega</td><td>Pendiente</td></tr>
+            <tr><td>Presencia en internet</td><td>Pendiente</td></tr>
+            <tr><td>Promociones y descuentos</td><td>Pendiente</td></tr>
+            <tr><td>Relación precio-calidad</td><td>Pendiente</td></tr>
+            <tr><td>Diferenciación de la marca</td><td>Pendiente</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tablewrap obs">
+        <table>
+          <caption>Lo que relevamos</caption>
+          <tbody>
+            <tr>
+              <th>Fortaleza observada</th>
+              <td>Ofrece muffins con glaseado y variedades del día.</td>
+            </tr>
+            <tr>
+              <th>Propuesta</th>
+              <td>Combina pastelería artesanal con cafetería.</td>
+            </tr>
+            <tr>
+              <th>Competencia con Dulce Promesa</th>
+              <td>Compite en la elaboración y comercialización de muffins y productos dulces.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  </div>
+
+  <div class="card qa" data-anim="fade-up">
+    <h4>¿Cuáles serían nuestras ventajas en comparación a los competidores?</h4>
+    <div class="chips static"><span>Mensaje de fe y esperanza</span><span>Atención cercana y personalizada</span><span>Producción diaria, siempre fresco</span><span>Identidad de marca coherente</span></div>
+  </div>
+
+  <div class="grid3 qa-grid">
+    <article class="card qa" data-anim="fade-up">
+      <h4>¿Cómo pensamos dar a conocer nuestro producto?</h4>
+      <ul class="plain">
+        <li>Instagram: reels, posts con mensajes, stories interactivas y encuestas, publicando 4 veces por semana.</li>
+        <li>TikTok: video de presentación del negocio (15 a 30 segundos) y video del Muffin Promesa Triple.</li>
+        <li>Facebook: aprovechando el mismo contenido de Instagram.</li>
+        <li>Mejores horarios: al mediodía (12:00 hs) y de 18:00 a 20:00 hs.</li>
+      </ul>
+      <p class="note"><a href="#redes" class="link-btn">Ver presencia digital completa</a></p>
+    </article>
+    <article class="card qa" data-anim="fade-up" data-delay="1">
+      <h4>En la gestión comercial: ¿qué aportan las promociones?</h4>
+      <ul class="plain">
+        <li>Dan a conocer la marca.</li>
+        <li>Impulsan la primera compra.</li>
+        <li>Fidelizan a los clientes.</li>
+      </ul>
+      <p class="mini-title">Las que pensamos usar</p>
+      <div class="chips static"><span>Oferta de lanzamiento</span><span>2x1 y combos</span><span>Descuentos por recompra</span><span>Paquetes especiales</span></div>
+    </article>
+    <article class="card qa" data-anim="fade-up" data-delay="2">
+      <h4>¿Cómo y dónde planeamos vender? Canales físicos y virtuales</h4>
+      <p class="mini-title">Virtuales</p>
+      <ul class="plain">
+        <li>WhatsApp Business: pedidos principales.</li>
+        <li>Instagram y TikTok.</li>
+        <li>Facebook y tienda online.</li>
+      </ul>
+      <p class="mini-title">Físicos</p>
+      <ul class="plain">
+        <li>Entrega a domicilio, propia o por apps.</li>
+        <li>Eventos y encargos especiales.</li>
+        <li>A futuro: ferias, puntos de venta en iglesias y, más adelante, un local propio. Hoy no tenemos local.</li>
+      </ul>
+    </article>
+  </div>
+
+  <h3 class="sub" data-anim="fade-up">Análisis FODA</h3>
+  <div class="foda">
+    <div class="q f" data-anim="fade-up"><h4>F</h4><ul><li>Buena calidad y sabor</li><li>Recetas caseras y cuidadas</li><li>Atención personalizada y cercana</li><li>Variedad de productos</li><li>Presencia en redes y WhatsApp</li><li>Buena relación precio-calidad</li></ul></div>
+    <div class="q o" data-anim="fade-up" data-delay="1"><h4>O</h4><ul><li>Demanda creciente de lo artesanal</li><li>Más ventas por redes sociales</li><li>Combos y promociones</li><li>Ferias y fechas especiales</li><li>Nuevos puntos de venta o delivery</li></ul></div>
+    <div class="q d" data-anim="fade-up"><h4>D</h4><ul><li>Poca experiencia en ventas y marketing</li><li>Dependencia de la mano de obra propia</li><li>Capacidad de producción limitada</li><li>Sin local propio</li><li>Pocos canales físicos</li></ul></div>
+    <div class="q a" data-anim="fade-up" data-delay="1"><h4>A</h4><ul><li>Competencia en pastelería</li><li>Suba de precios de insumos</li><li>Caída del consumo por la economía</li><li>Clientes perdidos por demoras</li><li>Imprevistos de insumos, salud o clima</li></ul></div>
+  </div>
+
+  <h3 class="sub" data-anim="fade-up">Nuestra clienta ideal</h3>
+  <div class="persona card" data-anim="fade-up">
+    <div class="persona-img ph"><img src="./img/BuyerPersona.jpg" alt="Luli, clienta ideal de Dulce Promesa"><span class="ph-label">buyer.jpg</span></div>
+    <div>
+      <p class="mini-title">Perfil ilustrativo</p>
+      <h3>Luli, 25 años</h3>
+      <p class="muted">Estudiante o joven profesional de Berazategui. Es un perfil de referencia del plan, no un resultado real de mercado.</p>
+      <div class="persona-grid">
+        <div><b>Motivaciones</b><span>Disfrutar un momento de placer, compartir, regalar y apoyar emprendimientos locales.</span></div>
+        <div><b>Intereses</b><span>Repostería, redes sociales, series y música, salidas con amigos y celebraciones.</span></div>
+        <div><b>Hábitos</b><span>Compra dulces una o dos veces por semana, pide por WhatsApp o redes y busca promociones.</span></div>
+        <div><b>Por qué nos elige</b><span>Calidad, variedad, atención cercana y el cariño de un emprendimiento local.</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="note center">Público objetivo: personas de 18 a 50 años, sobre todo mujeres y familias de la zona sur. Posicionamiento: “muffins artesanales con propósito”.</p>
+</section>
+
+<!-- ================= CUENTAS ================= -->
+<section id="cuentas" class="section">
+  <div class="section-head" data-anim="fade-up">
+    <p class="section-kicker">Paso 05 · Las cuentas claras</p>
+    <h2>Inversión y costos</h2>
+  </div>
+  <div class="tabs" id="finTabs"><button class="on" data-f="inv">Inversión inicial</button><button data-f="fix">Costos fijos mensuales</button></div>
+  <div class="fin">
+    <div class="card fin-total" data-anim="fade-up"><span id="finLabel">Total</span><b id="finTotal">$0</b><ul class="fin-list" id="finList"></ul></div>
+    <div class="card chart-card" data-anim="fade-up"><canvas id="finPie"></canvas></div>
+    <div class="card chart-card" data-anim="fade-up"><canvas id="finBar"></canvas></div>
+  </div>
+  <p class="note center">En el plan, el Monotributo figura con $55.000 entre los costos fijos. En el apartado impositivo se indica la categoría A, con $49.527,18 mensuales desde agosto de 2026.</p>
+</section>
+
+<!-- ================= MARCA ================= -->
+<section id="marca" class="section alt">
+  <div class="section-head" data-anim="fade-up">
+    <p class="section-kicker">Paso 06 · La presentación</p>
+    <h2>Identidad de marca</h2>
+    <p class="section-desc">Colores suaves —beige, rosa palo y verde menta—, una tipografía amigable y un muffin con un pequeño corazón.</p>
+  </div>
+  <div class="grid4">
+    <figure class="card logo-card" data-anim="fade-up"><div class="ph"><img src="./img/isotipo-nuevo.jpg" alt="Isotipo"><span class="ph-label">isotipo.jpg</span></div><figcaption><b>Isotipo</b>Solo el símbolo</figcaption></figure>
+    <figure class="card logo-card" data-anim="fade-up" data-delay="1"><div class="ph"><img src="./img/isologo.jpg" alt="Isologo"><span class="ph-label">isologo.jpg</span></div><figcaption><b>Isologo</b>Nombre y símbolo integrados</figcaption></figure>
+    <figure class="card logo-card" data-anim="fade-up" data-delay="2"><div class="ph"><img src="./img/imagotipo.jpg" alt="Imagotipo"><span class="ph-label">imagotipo.jpg</span></div><figcaption><b>Imagotipo</b>Símbolo y nombre combinables</figcaption></figure>
+    <figure class="card logo-card" data-anim="fade-up" data-delay="3"><div class="ph"><img src="./img/logotexto.jpg" alt="Logo"><span class="ph-label">logo.jpg</span></div><figcaption><b>Logo</b>Solo tipografía</figcaption></figure>
+  </div>
+  <div class="two-col">
+    <div class="card pack" data-anim="fade-up"><div class="pack-img ph"><img src="./img/packaging.jpg" alt="Packaging de Dulce Promesa"><span class="ph-label">packaging.jpg</span></div><div><p class="mini-title">Packaging</p><p>Caja kraft con sticker del logo, lazo o precinto en rosa, celeste o beige, y una tarjetita con mensaje de fe.</p></div></div>
+    <div class="card" data-anim="fade-up" data-delay="1"><p class="mini-title">Paleta</p><div class="swatches"><i style="background:#f6cfdd" title="Rosa"></i><i style="background:#fff2e4" title="Crema"></i><i style="background:#bfe6d4" title="Verde menta"></i><i style="background:#d9c8ef" title="Lila"></i><i style="background:#5a3a2e" title="Chocolate"></i></div><p class="mini-title">Medios creativos</p><p>Videos cortos para Reels y TikTok, publicaciones con mensajes, stories interactivas y, a futuro, un podcast breve con testimonios o recetas.</p></div>
+  </div>
+</section>
+
+<!-- ================= REDES ================= -->
+<section id="redes" class="section">
+  <div class="section-head" data-anim="fade-up">
+    <p class="section-kicker">Paso 07 · Compartir la promesa</p>
+    <h2>Presencia digital</h2>
+    <p class="section-desc">Elegimos Instagram y TikTok porque ahí está nuestro público, se consume contenido visual y se llega de forma orgánica y de bajo costo.</p>
+  </div>
+  <div class="tabs" id="socialTabs"><button class="on" data-n="ig">Instagram</button><button data-n="tt">TikTok</button><button data-n="fb">Facebook</button></div>
+  <div class="card social" id="socialPanel" data-anim="fade-up"></div>
+  <div class="two-col">
+    <div class="card" data-anim="fade-up"><p class="mini-title">Mejores horarios</p><p>Al mediodía (12:00 hs) y a la tarde-noche (18:00 a 20:00 hs), cuando la gente vuelve del trabajo o de la escuela.</p><p class="mini-title">A quién le hablamos</p><p>Personas de 18 a 45 años de la zona sur, interesadas en gastronomía, fe, familia y emprendimientos.</p></div>
+    <div class="card" data-anim="fade-up" data-delay="1"><p class="mini-title">Promociones</p><p>Oferta de lanzamiento, 2x1 y combos, descuentos por recompra y paquetes especiales: dan a conocer la marca, impulsan la primera compra y fidelizan.</p></div>
+  </div>
+  <div class="grid3">
+    <div class="post" data-anim="fade-up"><b>Lanzamiento</b><p>“¡Lanzamiento! 6 muffins a precio especial + mensaje de esperanza. Pedí por DM ✨ #DulcePromesa #MuffinsConFe”</p></div>
+    <div class="post" data-anim="fade-up" data-delay="1"><b>Publicación</b><p>“Hoy elegí endulzar tu día con fe y sabor. Muffins artesanales listos para vos ❤️ #DulcePromesa #HechoConAmor”</p></div>
+    <div class="post" data-anim="fade-up" data-delay="2"><b>Stories y video</b><p>Encuesta “¿Cuál es tu sabor favorito?”, presentación del negocio en 15–30 segundos y video del Muffin Promesa Triple.</p></div>
+  </div>
+</section>
+
+<!-- ================= PLAN ================= -->
+<section id="plan" class="section alt">
+  <div class="section-head" data-anim="fade-up">
+    <p class="section-kicker">Paso 08 · Al horno</p>
+    <h2>Plan de trabajo</h2>
+    <p class="section-desc">Cronograma de 49 días a partir del 18 de agosto de 2026.</p>
+  </div>
+  <div class="tabs" id="gTabs"><button data-v="dias">Días</button><button class="on" data-v="semanas">Semanas</button><button data-v="meses">Meses</button></div>
+  <div class="card gantt-wrap" data-anim="fade-up"><div class="gantt" id="gantt"></div></div>
+  <p class="note center">Los rangos son aproximados, tomados del diagrama del plan. Tramo oscuro: avance actual; claro: pendiente.</p>
+  <details class="card hours" data-anim="fade-up"><summary>Ver horas de trabajo por actividad</summary><div class="tablewrap"><table id="hoursTable"></table></div></details>
+  <h3 class="sub" data-anim="fade-up">Modelo Canvas</h3>
+  <div class="canvas" id="canvasGrid"></div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section id="contacto" class="section contact-section">
+  <div class="contact-inner">
+    <div class="contact-text" data-anim="fade-up">
+      <p class="section-kicker">Pedidos y consultas</p>
+      <h2>Hagamos tu pedido</h2>
+      <p class="section-desc">Escribinos y coordinamos sabores, cantidades y entrega.</p>
+      <ul class="contact-list">
+        <li><b>Ubicación</b>G. E. Hudson, Buenos Aires</li>
+        <li><b>Instagram</b><a href="https://www.instagram.com/dulcepromesa.muffins/" target="_blank" rel="noopener">@dulcepromesa.muffins</a></li>
+        <li><b>Facebook</b><a href="https://www.facebook.com/search/top?q=Dulce%20Promesa%20Muffins" target="_blank" rel="noopener">Dulce Promesa Muffins</a></li>
+        <li><b>TikTok</b><a href="https://www.tiktok.com/@dulcepromesa.muffins" target="_blank" rel="noopener">@dulcepromesa.muffins</a></li>
+        <li><b>Correo</b><a href="mailto:dulcepromesa1029@gmail.com">dulcepromesa1029@gmail.com</a></li>
+        <li><b>Web</b><a href="https://dulcepromesamuffins.netlify.app/" target="_blank" rel="noopener">dulcepromesa.netlify.app</a></li>
+      </ul>
+      <div class="btnrow">
+        <a class="btn btn-whatsapp" id="waBtn" target="_blank" rel="noopener" href="#">Escribir por WhatsApp</a>
+        <a class="btn btn-ghost" href="mailto:dulcepromesa1029@gmail.com">Enviar un correo</a>
+      </div>
+    </div>
+    <form class="contact-form" id="contactForm" data-anim="fade-up" data-delay="1">
+      <div class="form-row"><label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamás?" required></div>
+      <div class="form-row"><label for="telefono">Teléfono</label><input type="tel" id="telefono" name="telefono" placeholder="Tu número de contacto" required></div>
+      <div class="form-row"><label for="muffin">Producto de interés</label><select id="muffin" name="muffin"><option value="">Elegí uno (opcional)</option></select></div>
+      <div class="form-row"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" rows="3" placeholder="Cantidad, fecha o cualquier detalle"></textarea></div>
+      <button type="submit" class="btn btn-primary btn-block">Enviar consulta por WhatsApp</button>
+      <p class="form-note" id="formNote" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="footer-bottom">Dulce Promesa © <span id="anioActual"></span> · G. E. Hudson, Buenos Aires</p>
+</footer>
+
+<a class="wa-float" id="waFloat" target="_blank" rel="noopener" href="#" aria-label="Escribinos por WhatsApp" title="Escribinos por WhatsApp"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M5 3.5h14A2.5 2.5 0 0 1 21.5 6v9.5A2.5 2.5 0 0 1 19 18h-8.2L6 21.5V18H5a2.5 2.5 0 0 1-2.5-2.5V6A2.5 2.5 0 0 1 5 3.5z" fill="currentColor"/><circle cx="8.5" cy="10.7" r="1.2" fill="#4caf8a"/><circle cx="12" cy="10.7" r="1.2" fill="#4caf8a"/><circle cx="15.5" cy="10.7" r="1.2" fill="#4caf8a"/></svg></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="script.js"></script>
+<!-- Red de seguridad: si por algún motivo el script no corre, se muestra todo el contenido -->
+<script>setTimeout(function(){if(!window.__dp){document.documentElement.classList.add('force-show');document.body.classList.add('ready')}},5000)</script>
+</body>
+</html>

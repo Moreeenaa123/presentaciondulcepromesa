@@ -1,0 +1,14 @@
+DULCE PROMESA — GUÍA RÁPIDA
+
+Carpeta:
+  index.html · style.css · script.js · img/ · media/
+
+PARA VER LA PÁGINA: doble clic en index.html (necesita internet para las fuentes y Chart.js).
+
+1) VIDEO Y MINIATURA (carpeta media/)
+  media/nuestra-historia.mp4
+  media/nuestra-historia-miniatura.png
+2) IMÁGENES (carpeta img/): la lista exacta de nombres está en img/LEEME-img.txt.
+3) WHATSAPP: constante WA al inicio de script.js (5491127147436).
+4) VERSÍCULOS: constante VERSES en script.js (Reina-Valera 1909). Para sumar uno, copiá una línea y cambiá libro (l), capítulo (c), versículo (v) y texto (t).
+5) Si el sistema del visitante tiene activado "reducir movimiento", la página no usa animaciones ni pantalla de carga.
